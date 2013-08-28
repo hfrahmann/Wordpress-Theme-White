@@ -19,6 +19,13 @@
 
 <body <?php body_class(); ?>>
 
+<?php
+$theme_options = get_option('hf_theme_options');
+if(isset($theme_options['headerimage']) && strlen($theme_options['headerimage']) > 0) {
+?>
+    <div class="hf-headerimage" style="background-image:url(<?php echo $theme_options['headerimage'] ?>);"></div>
+<?php } ?>
+
     <div class="hf-titleblock">
         <a href="<?php echo home_url( '/' ); ?>" class="hf-title"><?php bloginfo( 'name' ); ?></a>
     </div>
